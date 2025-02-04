@@ -1,0 +1,158 @@
+<mvc:View
+    controllerName="com.kt.sap.project2.controller.Details"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:u="sap.ui.unified"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:layout="sap.ui.layout"
+    xmlns="sap.m"
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Page
+        id="idPage2"
+        title="{i18n>title}"
+    >
+        <customHeader>
+            <Bar>
+                <contentRight>
+                    <Button
+                        id="idEdit"
+                        text="Edit"
+                        press="handleEditPress"
+                        type="Emphasized"
+                        visible="true"
+                    />
+                      <Button
+                        id="idSubmit"
+                        text="Submit"
+                        press="handleSubmit"
+                        type="Emphasized"
+                        visible="false"
+                    />
+                </contentRight>
+            </Bar>
+        </customHeader>
+        <VBox class="sapUiSmallMargin">
+            <f:SimpleForm 
+                id="idSimpleForm"
+                editable="{detailModel>/isEditable}"
+                layout="ColumnLayout"
+                title="Shah Form Data"
+                columnsM="2"
+                columnsL="3"
+                columnsXL="4"
+
+            >
+                <f:content>
+                    <Label text="Company" />
+                    <Input
+                        value="{detailModel>/Company}"
+                        editable="{detailModel>/isEditable}"
+                    />
+
+                    <Label text="Model" />
+                    <Input
+                        value="{detailModel>/Model}"
+                        editable="{detailModel>/isEditable}"
+                    />
+                    <Label text="Variant" />
+                    <Input
+                        value="{detailModel>/Variant}"
+                        editable="{detailModel>/isEditable}"
+                    />
+                    <Label text="Transmission" />
+                    <Input
+                        value="{detailModel>/Transmission}"
+                        editable="{detailModel>/isEditable}"
+                    />
+                    <Label text="Color" />
+                    <Input
+                        value="{detailModel>/Color}"
+                        editable="{detailModel>/isEditable}"
+                    />
+                    <Label text="Fuel" />
+                    <Input
+                        value="{detailModel>/Fuel}"
+                        editable="{detailModel>/isEditable}"
+                    />
+                    <Label text="Board/Plate" />
+                    <Input
+                        value="{detailModel>/BoardPlate}"
+                        editable="{detailModel>/isEditable}"
+                    />
+                    <Label text="Ex-showroom" />
+                    <Input
+                        value="{detailModel>/ExShowroom}"
+                        editable="{detailModel>/isEditable}"
+                    />
+                    <Label text="TCS  1%" />
+                    <Input
+                        value="{detailModel>/TCS1Perc}"
+                        editable="{detailModel>/isEditable}"
+                    />
+                    <Label text="ROAD TAX" />
+                    <Input
+                        value="{detailModel>/ROADTAX}"
+                        editable="{detailModel>/isEditable}"
+                    />
+                    <Label text="Regular Insurance" />
+                    <Input
+                        value="{detailModel>/RegularInsurance}"
+                        editable="{detailModel>/isEditable}"
+                    />
+                    <Label text="Add On Insurance" />
+                    <Input
+                        value="{detailModel>/AddOnInsurance}"
+                        editable="{detailModel>/isEditable}"
+                    />
+                    <Label text="Temp Charges" />
+                    <Input
+                        value="{detailModel>/TempCharges}"
+                        editable="{detailModel>/isEditable}"
+                    />
+                    <Label text="Reg/Hyp CHARGE" />
+                    <Input
+                        value="{detailModel>/RegHypCharge}"
+                        editable="{detailModel>/isEditable}"
+                    />
+                    <Label text="Shield of trust 4YR/45k" />
+                    <Input
+                        value="{detailModel>/ShieldOfTrust4YR45K}"
+                        editable="{detailModel>/isEditable}"
+                    />
+                    <Label text="EXTD Warranty FOR 4YR/80K" />
+                    <Input
+                        value="{detailModel>/EXTDWarrantyFOR4YR80K}"
+                        editable="{detailModel>/isEditable}"
+                    />
+                    <Label text="STD Fittings" />
+                    <Input
+                        value="{detailModel>/STDFittings}"
+                        editable="{detailModel>/isEditable}"
+                    />
+                    <Label text="FAST TAG" />
+                    <Input
+                        value="{detailModel>/FastTag}"
+                        editable="{detailModel>/isEditable}"
+                    />
+                    <Label text="VAS" />
+                    <Input
+                        value="{detailModel>/VAS}"
+                        editable="{detailModel>/isEditable}"
+                    />
+                    <Label text="Discount/offers" />
+                    <Input
+                        value="{detailModel>/DiscountOffers}"
+                        editable="{detailModel>/isEditable}"
+                    />
+                    <Label text="Model Mfg Code" />
+                    <Input
+                        value="{detailModel>/ModelMfgCode}"
+                        editable="{detailModel>/isEditable}"
+                    />
+                </f:content>
+            </f:SimpleForm>
+            
+        </VBox>
+    </Page>
+</mvc:View>
