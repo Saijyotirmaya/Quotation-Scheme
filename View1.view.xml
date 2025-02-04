@@ -1,0 +1,212 @@
+<mvc:View
+    controllerName="com.kt.sap.project2.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:u="sap.ui.unified"
+    xmlns:t="sap.ui.table"
+    xmlns:layout="sap.ui.layout"
+    xmlns="sap.m"
+    xmlns:m="sap.m.Table"
+    xmlns:sfb="sap.ui.comp.smartfilterbar"
+    xmlns:f="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+     xmlns:filterBar="sap.ui.comp.filterbar"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+   
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:core="sap.ui.core"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+    
+        <fb:FilterBar id="filterbar" useToolbar="true" filterChange=".onFilterChange"   search=".onSearch">
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem name="Company" label="Company" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox
+											name="Company"
+											selectionChange=""
+											
+										>
+											<core:Item key="" text=""/>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="Model" label="Model" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox
+											name="Model"
+											selectionChange=""
+											
+										>
+											<core:Item key="" text=""/>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="Variant" label="Variant" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox
+											name="Variant"
+											selectionChange=""
+											
+										>
+											<core:Item key="" text=""/>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+                                <fb:FilterGroupItem name="Transmission" label="Transmission" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox
+											name="Transmission"
+											selectionChange=""
+											
+										>
+											<core:Item key="" text=""/>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+                                <fb:FilterGroupItem name="Color" label="Color" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox
+											name="Color"
+											selectionChange=""
+											
+										>
+											<core:Item key="" text=""/>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+							</fb:filterGroupItems>
+             <Toolbar>
+                <ToolbarSpacer />
+              
+                 <Button
+                    id="idUpload"
+                    text="Upload"
+                    icon="sap-icon://task"
+                    press="onUploadpress"
+                    type="Emphasized"
+                />
+              
+                <Button
+                    id="idAdd"
+                    text=""
+                    icon="sap-icon://add"
+                    press="onCreateform"
+                    
+                />
+                <Button
+                    id="idDelete"
+                    text=""
+                    icon="sap-icon://delete"
+                    press="onDeletepress"
+                />
+            </Toolbar>
+						</fb:FilterBar>
+
+        <!-- Smart Filter Bar with Search Field -->
+        <smartTable:SmartTable
+            id="idSmartTableEarning"
+            entitySet=""
+            header="{i18n>title}"
+            useVariantManagement="false"
+            tableType="ResponsiveTable"
+            demandPopin="true"
+            enableAutoBinding="true"
+            enableAutoColumnWidth="false"
+            enableCopy="false"
+            initiallyVisibleFields=""
+            enableExport="false"
+            showTablePersonalisation="true"
+        >
+            <smartTable:customToolbar>
+                    <OverflowToolbar>
+                        <Button icon="sap-icon://add" tooltip="Edit" press="onPressAddPayslip" />
+                        <ToolbarSeparator />
+                    </OverflowToolbar>
+                </smartTable:customToolbar>
+            <Table
+                id="idQuotationtable"
+                items="{localModel>/items}"
+                mode="MultiSelect">
+                <!-- <OverflowToolbar
+                    id="contentTb"
+                    class="sapUiSmallMarginTop"
+                >
+                    <Label text="Toolbar content " />
+                    <Button text="Action1" />
+                </OverflowToolbar> -->
+                <columns>
+                    <Column minScreenWidth="Tablet">
+                        <Text text="{i18n>Company}" />
+                    </Column>
+                    <Column minScreenWidth="Tablet">
+                        <Text text="{i18n>Model}" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="{i18n>Variant}" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                    >
+                        <Text text="{i18n>Transmission}" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                    >
+                        <Text text="{i18n>Color}" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                    >
+                        <Text text="{i18n>Fuel}" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                    >
+                        <Text text="{i18n>Board/Plate}" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem
+                        press="onItemPress"
+                        type="Navigation"
+                    >
+
+                        <cells>
+                            <Text text="{localModel>Company}" />
+                            <Text text="{localModel>Model}" />
+                            <Text text="{localModel>Variant}" />
+                            <Text text="{localModel>Transmission}" />
+                            <Text text="{localModel>Color}" />
+                            <Text text="{localModel>Fuel}" />
+                            <Text text="{localModel>BoardPlate}" />
+                            <Text text="{localModel>Ex-showroom}" />
+                            <Text text="{localModel>TCS  1%}" />
+                            <Text text="{localModel>ROAD TAX}" />
+                            <Text text="{localModel>Regular Insurance}" />
+                            <Text text="{localModel>Add On Insurance}" />
+                            <Text text="{localModel>Temp Charges}" />
+                            <Text text="{localModel>RegHypCHARGE}" />
+                            <Text text="{localModel>Shield of trust 4YR45K}" />
+                            <Text text="{localModel>EXTD Warranty FOR 4YR80K}" />
+                            <Text text="{localModel>STD Fittings}" />
+                            <Text text="{localModel>FAST TAG}" />
+                            <Text text="{localModel>VAS}" />
+                            <Text text="{localModel>Discountoffers}" />
+                            <Text text="{localModel>Model Mfg Code}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </smartTable:SmartTable>
+    </Page>
+</mvc:View>
