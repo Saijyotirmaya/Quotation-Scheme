@@ -1,0 +1,55 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:u="sap.ui.unified"
+    xmlns:layout="sap.ui.layout">
+    
+    <Dialog id="uploadDialog" title="Quotation Scheme" stretch="false">
+         <VBox>
+        <f:SimpleForm id="idEntryForm"
+        editable="true"
+			
+            layout="ColumnLayout"
+            labelSpanXL="3"
+             adjustLabelSpan="false"
+            labelSpanL="3"
+            labelSpanM="3"
+            labelSpanS="12"
+            emptySpanXL="2"
+			emptySpanL="2"
+			emptySpanM="2"
+			emptySpanS="0"
+            columnsM="1"  
+            columnsL="1"  
+            columnsXL="1"
+             singleContainerFullSize="false"> 
+
+            <f:content>
+                <Label text="{i18n>selectbrand}" />
+                <ComboBox id="idComboBox" width="100%" >
+                    <items>
+                        <core:ListItem key="Mahindra" text="Mahindra"/>
+                        <core:ListItem key="Hyundai" text="Hyundai"/>
+                    </items>
+                </ComboBox>
+
+                <Label text="{i18n>fileupload}" />
+                <u:FileUploader
+                    id="idFileUploader"
+                    width="300px"
+                    buttonText="File Upload"
+                    placeholder="Choose an Excel file"
+                    change="onUpload"
+                    icon="sap-icon://upload"
+                />
+            </f:content>
+        </f:SimpleForm>
+ </VBox>
+        <beginButton>
+            <Button text="Submit" type="Emphasized" press=".onDialogUpload"/>
+        </beginButton>
+        <endButton>
+            <Button text="Cancel" type="Reject" press=".onDialogCancel"/>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>
